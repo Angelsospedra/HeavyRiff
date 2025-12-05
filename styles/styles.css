@@ -17,8 +17,9 @@ body {
 header {
   background: linear-gradient(
     180deg,
-    rgba(100, 100, 100, 0.6) 0%,
-    rgba(150, 150, 150, 0) 100%
+    rgba(0, 0, 0, 0.6) 0%,
+    rgba(0, 0, 0, 0.5) 30%,
+    rgba(0, 0, 0, 0) 100%
   );
   padding: 1.5rem 2rem;
   border-bottom: none;
@@ -41,6 +42,7 @@ header {
 .logo-img {
   height: 2.5rem;
   width: auto;
+  filter: brightness(0) invert(1);
 }
 
 .logo span {
@@ -80,36 +82,53 @@ nav a.active {
 .hero {
   padding: 0 2rem 8rem 2rem;
   text-align: center;
-  background: linear-gradient(180deg, #ffffff 0%, #f9f9f9 100%);
-  margin-top: -4px;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+  margin-top: -90px;
+  padding-top: 80px;
+  height: 70vh;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 1;
+}
+
+.hero h1,
+.hero p {
+  position: relative;
+  z-index: 1;
+  margin-top: 3rem;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  letter-spacing: -1px;
-  font-weight: 700;
-  color: #1d1d1d;
+  font-size: 15rem;
+  margin-bottom: 0;
+  font-weight: 1000;
+  color: #f0eee7f4;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  color: #666;
-  margin-bottom: 0;
-  font-weight: 400;
+  display: none;
 }
 
 .hero-image {
   width: 100%;
-  height: 100vh;
+  height: 110vh;
   background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   overflow: hidden;
-  margin-top: 0;
-  padding-top: 0;
+  margin-top: -100px;
 }
 
 .hero-image img {
@@ -117,23 +136,6 @@ nav a.active {
   height: 100%;
   object-fit: cover;
   position: absolute;
-}
-
-.guitar-emoji {
-  position: relative;
-  z-index: 1;
-  filter: drop-shadow(0 10px 30px rgba(34, 51, 59, 0.2));
-  animation: float 6s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
 }
 
 .container {
@@ -151,6 +153,18 @@ nav a.active {
   margin-top: -4px;
 }
 
+.content-section h1 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+.content-section > h1:first-child {
+  margin-top: 0;
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -160,46 +174,6 @@ nav a.active {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-.section {
-  display: none;
-}
-
-.section.active {
-  display: block;
-  animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-h1 {
-  font-size: 3rem;
-  color: #22333b;
-  margin-bottom: 2rem;
-  letter-spacing: -1px;
-  font-weight: 700;
-}
-
-h2 {
-  font-size: 2.2rem;
-  margin-bottom: 2.5rem;
-  color: #1d1d1d;
-  letter-spacing: -0.5px;
-  font-weight: 700;
-}
-
-h3 {
-  font-size: 1.2rem;
 }
 
 .guitars-grid {
@@ -233,21 +207,6 @@ h3 {
   font-size: 5rem;
   overflow: hidden;
   position: relative;
-}
-
-.guitar-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(255, 255, 255, 0.4) 0%,
-    transparent 70%
-  );
-  pointer-events: none;
 }
 
 .guitar-info {
@@ -297,15 +256,6 @@ h3 {
   transform: scale(0.99);
 }
 
-.btn-primary {
-  background-color: #22333b;
-  color: #fff;
-}
-
-.btn-primary:hover {
-  background-color: #1a242d;
-}
-
 .customize-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -330,9 +280,10 @@ h3 {
 }
 
 .preview-guitar {
-  font-size: 6rem;
-  margin-bottom: 1.5rem;
-  filter: drop-shadow(0 4px 12px rgba(34, 51, 59, 0.1));
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .customize-options {
@@ -494,10 +445,10 @@ select option {
 }
 
 footer {
-  background-color: #e8e8e8;
+  background-color: #22333b;
   padding: 3.5rem 2rem;
   margin-top: 5rem;
-  border-top: 1px solid #d0d0d0;
+  border-top: 1px solid #1a242d;
 }
 
 .footer-content {
@@ -511,31 +462,46 @@ footer {
 .footer-section h4 {
   font-size: 1rem;
   font-weight: 600;
-  color: #1d1d1d;
+  color: #ffffff;
   margin-bottom: 1.2rem;
 }
 
 .footer-section p,
 .footer-section a {
   font-size: 0.9rem;
-  color: #666;
+  color: #b8c5d6;
   margin-bottom: 0.8rem;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #22333b;
+  color: #ffffff;
 }
 
 .footer-bottom {
   max-width: 1200px;
   margin: 2rem auto 0;
   padding-top: 2rem;
-  border-top: 1px solid #d0d0d0;
+  border-top: 1px solid #1a242d;
   text-align: center;
-  color: #999;
+  color: #8a98aa;
   font-size: 0.9rem;
+}
+
+.hero-image-section {
+  width: 100vw;
+  height: 60vh;
+  position: relative;
+  overflow: hidden;
+  margin: 4rem calc(-50vw + 50%);
+  margin-top: 5rem;
+}
+
+.hero-image-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 1024px) {
