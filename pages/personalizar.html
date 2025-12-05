@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HeavyRiff - Personalizar Guitarra</title>
+    <link rel="stylesheet" href="../styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <a href="index.html" class="logo">
+        <img
+          src="../assets/heavyriff_logo.svg"
+          alt="HeavyRiff logo"
+          class="logo-img"
+        />
+        <span>HeavyRiff</span>
+      </a>
+      <nav>
+        <a href="index.html">Tienda</a>
+        <a href="personalizar.html" class="active">Personalizar</a>
+        <a href="sobre-nosotros.html">Sobre nosotros</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <h1>PERSONALIZA TU GUITARRA</h1>
+      <p>Crea el instrumento perfecto para tu estilo</p>
+    </div>
+
+    <div class="container">
+      <h2>Crea tu guitarra perfecta</h2>
+      <div class="customize-section">
+        <div class="customize-preview">
+          <div class="preview-guitar">🎸</div>
+          <p style="color: #999; font-weight: 500">Tu guitarra personalizada</p>
+        </div>
+
+        <div class="customize-options">
+          <div class="option-group">
+            <label>Color del cuerpo</label>
+            <div class="color-options">
+              <button
+                class="color-btn active"
+                style="background-color: #1d1d1d"
+                onclick="selectColor(this)"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #22333b"
+                onclick="selectColor(this)"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #8b0000"
+                onclick="selectColor(this)"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #2a5a6a"
+                onclick="selectColor(this)"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #4a4a4a"
+                onclick="selectColor(this)"
+              ></button>
+              <button
+                class="color-btn"
+                style="background-color: #1a3a3a"
+                onclick="selectColor(this)"
+              ></button>
+            </div>
+          </div>
+
+          <div class="option-group">
+            <label>Tipo de cuerpo</label>
+            <select>
+              <option>Stratocaster</option>
+              <option>Telecaster</option>
+              <option>Les Paul</option>
+              <option>SG</option>
+              <option>Flying V</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>Pastillas</label>
+            <select>
+              <option>Single Coil Vintage (+$0)</option>
+              <option>Humbucker Clásico (+$150)</option>
+              <option>Humbucker Activo (+$250)</option>
+              <option>P90 Retro (+$100)</option>
+            </select>
+          </div>
+
+          <div class="option-group">
+            <label>Trastes</label>
+            <select>
+              <option>22 Trastes Estándar (+$0)</option>
+              <option>24 Trastes (+$100)</option>
+              <option>Jumbo Deluxe (+$200)</option>
+            </select>
+          </div>
+
+          <div class="price-total">
+            <p>Precio estimado</p>
+            <h3>$1,299</h3>
+            <button class="btn btn-primary">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Enlaces rápidos</h4>
+          <a href="index.html">Tienda</a>
+          <a href="personalizar.html">Personalizar</a>
+          <a href="sobre-nosotros.html">Sobre nosotros</a>
+          <a href="#">Blog</a>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p><strong>Email:</strong> info@heavyriff.com</p>
+          <p><strong>Teléfono:</strong> +34 900 123 456</p>
+          <p><strong>Dirección:</strong> Valencia, España</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+          <a href="#">YouTube</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 HeavyRiff. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <script>
+      function selectColor(btn) {
+        document
+          .querySelectorAll(".color-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+      }
+    </script>
+  </body>
+</html>
