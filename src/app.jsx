@@ -8,7 +8,7 @@ export default function App() {
   return (
     <Router basename="/heavyriff">
       <Routes>
-        <Route path="/" element={<Tienda />} />
+        <Route path="/tienda" element={<Tienda />} />
         <Route path="/personalizar" element={<Personalizar />} />
         <Route path="/sobre-nosotros" element={<SobreNosotros />} />
       </Routes>
